@@ -30,7 +30,8 @@
                 fwrite($myfile, $linha);
                 $i++;
             }
-            echo "<h3> Todos os participantes devem acessar:".$URL." e descobrir seu amigo </h3>";
+            echo "<h3> Todos os participantes devem acessar:".$URL." e VERIFICAR seu amigo </h3>";
+            echo "<a href='$URL'> Voltar </a>";
             fclose($myfile);           
         }  else {
             echo "<h1> - Não foi possível criar o evento de amigo secreto. Possíveis causas: <h1>";

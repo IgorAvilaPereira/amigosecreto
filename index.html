@@ -20,6 +20,9 @@
             }
 
         }
+        function funcao_submit(){
+            alert("A geração pode demorar devido ao aumento do número de acessos e nossa plataforma! Espere!");
+        }
     </script>
 </head>
 
@@ -34,7 +37,7 @@
     <h2>Crie um novo Evento</h2>
     <h3>Lista de Participantes:</h3>
     <button id="botao" onclick="adicionar_participante()">Adicionar</button>
-    <form action="gerar.php" method="post">
+    <form action="gerar.php" method="post" onsubmit="return funcao_submit()">
         <br>
         <div id="div_participante">
         </div> <br>
