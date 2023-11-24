@@ -1,5 +1,6 @@
 <?php  
     $URL = "https://amigosecretoigor.000webhostapp.com/";
+    if (!isset($_POST['vetParticipante'])) die("Acesso proibido!");
     $vetParticipante = $_POST['vetParticipante'];    
     $vetAmigo = $vetParticipante;    
     // $vetEmail = $_POST['vetEmail'];  
