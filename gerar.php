@@ -22,7 +22,7 @@
             $myfile = fopen($chaveEvento.".txt", "w") or die("Unable to open file!");
             while ($i < count($vetParticipante)){                
                 $chave = uniqid(true);
-                echo "* ".$chave." => ".$vetParticipante[$i]."<br><br>";
+                echo  $vetParticipante[$i]." => Chave Evento:".$chaveEvento." Chave Pessoal:".$chave."<br><br>";
                 // participanteX tirou amigoY
                 $linha = $chave.";".$vetParticipante[$i].";".$vetAmigo[$i]."\n";
                 fwrite($myfile, $linha);
