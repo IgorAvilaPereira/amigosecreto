@@ -1,23 +1,19 @@
 <?php  
     $URL = "https://amigosecretoigor.000webhostapp.com/";
     if (!isset($_POST['vetParticipante'])) die("Acesso proibido!");
-    $vetParticipante = $_POST['vetParticipante'];        
+    $vetParticipante = $_POST['vetParticipante'];    
     $vetAmigo = $vetParticipante;    
-    $vetAmigosPossiveis = $vetAmigo;    
     // $vetEmail = $_POST['vetEmail'];  
     $vetAmigo = [];
     $i = 0;
     if (is_array($vetAmigo) && is_array($vetParticipante)){
         if (count($vetParticipante) > 0 /*&& count($vetAmigo) > 0 && count($vetParticipante) == count($vetAmigo)*/){
             foreach($vetParticipante as $participante){        
-                $indicePossivelAmigo = rand(0, count($vetAmigosPossiveis)-1);
-                $possivelAmigo = $vetAmigosPossiveis[$indicePossivelAmigo];
+                $possivelAmigo = $vetParticipante[rand(0, count($vetParticipante)-1)];
                 while ($participante == $possivelAmigo || in_array($possivelAmigo, $vetAmigo)){            
-                    $indicePossivelAmigo = rand(0, count($vetAmigosPossiveis)-1);
-                    $possivelAmigo = $vetAmigosPossiveis[$indicePossivelAmigo];
+                    $possivelAmigo = $vetParticipante[rand(0, count($vetParticipante)-1)];
                 }
                 $vetAmigo[$i] = $possivelAmigo;        
-                array_splice($vetAmigosPossiveis, 2, $indicePossivelAmigo);
                 $i++;
             }
             $i = 0;
