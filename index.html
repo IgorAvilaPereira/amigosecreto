@@ -6,7 +6,18 @@
     <title>Amigo Secreto - Igor </title>
     <script>
         function adicionar_participante() {
-            document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
+            var qtde = prompt("Quantos!?");
+            var i = 0;
+            if (!isNaN(qtde)){
+                while (i < qtde){
+                    document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
+                    i++;
+                }
+                document.querySelector("#botao").style.display = "none";
+            } else {
+                alert("Digite uma quantidade válida, ou seja, um número inteiro!");
+            }
+            
         }
     </script>
 </head>
@@ -20,7 +31,7 @@
     </form>
 
     <h2>Lista de Participantes:</h2>
-    <button onclick="adicionar_participante()">Adicionar</button>
+    <button id="botao" onclick="adicionar_participante()">Adicionar</button>
     <form action="gerar.php" method="post">
         <br>
         <div id="div_participante">

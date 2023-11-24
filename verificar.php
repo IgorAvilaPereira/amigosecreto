@@ -1,6 +1,6 @@
 <?php
     $chaveEvento = trim($_POST['chave_evento']);
-    $chavePessoal = trim($_POST['chave_pessoal']);
+    $chavePessoal = trim($_POST['chave_pessoal']);    
     $myfile = fopen($chaveEvento.".txt", "r") or die("Chave incorreta!");        
     while(!feof($myfile)) {
       $linha = fgets($myfile);
