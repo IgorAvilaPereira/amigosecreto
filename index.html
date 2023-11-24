@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto - Igor </title>
+    <script>
+        function adicionar_participante() {
+            document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><b><input type=\"text\" name=\"vetParticipante[]\"> <input type=\"text\" name=\"vetEmail[]\"></b><br>";
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Descubra seu amigo:</h2>
+    <form action="verificar.php" method="post">
+        Chave do Amigo Secreto: <input type="text" name="chave_evento"> <br>
+        Sua Chave: <input type="text" name="chave_pessoal"> <br>
+        <input type="submit" value="Verificar">
+    </form>
+
+    <h2>Lista de Participantes:</h2>
+    <button onclick="adicionar_participante()">Adicionar</button>
+    <form action="gerar.php" method="post">
+        <br>
+        <div id="div_participante">
+        </div> <br>
+        <br>
+        <input type="submit" value="Gerar">
+    </form>
+</body>
+</html>
