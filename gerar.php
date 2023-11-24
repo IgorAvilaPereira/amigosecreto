@@ -1,4 +1,5 @@
 <?php  
+    $URL = "https://amigosecretoigor.000webhostapp.com/";
     $vetParticipante = $_POST['vetParticipante'];    
     $vetAmigo = $vetParticipante;    
     // $vetEmail = $_POST['vetEmail'];  
@@ -22,12 +23,13 @@
             $myfile = fopen($chaveEvento.".txt", "w") or die("Unable to open file!");
             while ($i < count($vetParticipante)){                
                 $chave = uniqid(true);
-                echo  $vetParticipante[$i]." => Chave Evento:".$chaveEvento." Chave Pessoal:".$chave."<br><br>";
+                echo  $vetParticipante[$i]." => <b>Chave Evento:</b>".$chaveEvento." <b>Chave Pessoal:</b>".$chave."<br><br>";
                 // participanteX tirou amigoY
                 $linha = $chave.";".$vetParticipante[$i].";".$vetAmigo[$i]."\n";
                 fwrite($myfile, $linha);
                 $i++;
             }
+            echo "<h3> Todos os participantes devem acessar:".$URL." e descobrir seu amigo </h3>";
             fclose($myfile);           
         }  else {
             echo "<h1> - Não foi possível criar o evento de amigo secreto. Possíveis causas: <h1>";
