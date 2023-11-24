@@ -1,4 +1,0 @@
-16560f862531cd;Igor;Nanah
-16560f862531e4;Nanah;Sairon
-16560f862531e9;Homero;Igor
-16560f862531ed;Sairon;Homero
