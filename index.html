@@ -8,8 +8,11 @@
     <script>
         function adicionar_participante() {
             var qtde = prompt("Quantos!?");
-            var i = 0;
+            if (qtde === null) {
+                return; 
+            }
             if (!isNaN(qtde)) {
+                var i = 0;
                 while (i < qtde) {
                     document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
                     i++;
