@@ -20,7 +20,7 @@
             }
 
         }
-        function funcao_submit(){
+        function funcao_submit() {
             alert("A geração pode demorar devido ao aumento do número de acessos e nossa plataforma! Espere!");
         }
     </script>
@@ -29,14 +29,22 @@
 <body>
     <h2>Descubra seu amigo:</h2>
     <form action="verificar.php" method="post">
-        Chave do Evento: <input type="text" name="chave_evento"> <br>
-        Sua Chave Pessoal: <input type="text" name="chave_pessoal"> <br>
-        <input type="submit" value="Verificar">
-    </form>
+        <table border="0">
+            <tr>
+                <td> Chave do Evento:</td>
+                <td> <input type="text" name="chave_evento"> </td>
+            </tr>
+            <tr>
+                <td> Sua Chave Pessoal:</td>
+                <td> <input type="text" name="chave_pessoal"> </td>
+            </tr>
 
-    <h2>Crie um novo Evento</h2>
-    <h3>Lista de Participantes:</h3>
-    <button id="botao" onclick="adicionar_participante()">Adicionar</button>
+
+        </table><input type="submit" value="Verificar">
+    </form>
+    <hr>
+    <h2>Crie um novo Evento:</h2>
+    <button id="botao" onclick="adicionar_participante()">Adiciona Participantes</button>
     <form action="gerar.php" method="post" onsubmit="return funcao_submit()">
         <br>
         <div id="div_participante">

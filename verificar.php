@@ -1,4 +1,6 @@
 <?php
+    if (!isset($_POST['chave_evento']) || !isset($_POST['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
+    if (empty($_POST['chave_evento']) || empty($_POST['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
     $chaveEvento = trim($_POST['chave_evento']);
     $chavePessoal = trim($_POST['chave_pessoal']);    
     $myfile = fopen($chaveEvento.".txt", "r") or die("Chave incorreta!");        
