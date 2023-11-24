@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,8 @@
         function adicionar_participante() {
             var qtde = prompt("Quantos!?");
             var i = 0;
-            if (!isNaN(qtde)){
-                while (i < qtde){
+            if (!isNaN(qtde)) {
+                while (i < qtde) {
                     document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
                     i++;
                 }
@@ -17,7 +18,7 @@
             } else {
                 alert("Digite uma quantidade válida, ou seja, um número inteiro!");
             }
-            
+
         }
     </script>
 </head>
@@ -40,4 +41,5 @@
         <input type="submit" value="Gerar">
     </form>
 </body>
+
 </html>
