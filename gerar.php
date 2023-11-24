@@ -30,10 +30,10 @@
                         $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
                         $indicePossivelAmigo++;
                     } else {
-                        shuffle($vetAmigoPossivel);  
-                        $indicePossivelAmigo = 0;
-                        $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
-                        // die("Erro na geração do amigo secreto. Favor reiniciar o processo!");
+                        // shuffle($vetAmigoPossivel);  
+                        // $indicePossivelAmigo = 0;
+                        // $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
+                        die("Erro na geração do amigo secreto. Favor reiniciar o processo!");
                     }
                 }
                 $vetAmigo[$i] = $possivelAmigo;  
@@ -55,7 +55,7 @@
                 fwrite($myfile, $linha);
                 $i++;
             }
-            echo "<h3> Todos os participantes devem acessar:".$URL." e VERIFICAR seu amigo (usando a chave do evento e sua chave pessoal) </h3>";
+            echo "<h3> Todos os participantes devem acessar: <a href='".$URL."'> $URL </a> e VERIFICAR seu amigo (usando a chave do evento e sua chave pessoal) </h3>";
             echo "<a href='$URL'> Voltar </a>";
             fclose($myfile);           
         }  else {
