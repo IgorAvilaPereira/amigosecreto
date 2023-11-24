@@ -33,7 +33,7 @@
                         // shuffle($vetAmigoPossivel);  
                         // $indicePossivelAmigo = 0;
                         // $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
-                        die("Erro na geração do amigo secreto. Favor reiniciar o processo!");
+                        die("Erro na geração do amigo secreto. Favor reiniciar o processo! <a href='".$URL."'> voltar </a>");
                     }
                 }
                 $vetAmigo[$i] = $possivelAmigo;  
