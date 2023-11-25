@@ -14,12 +14,16 @@
             if (!isNaN(qtde)) {
                 if (qtde > 0) {
                     if (qtde > 1) {
-                        var i = 0;
-                        while (i < qtde) {
-                            document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
-                            i++;
+                        if (qtde <= 30) {
+                            var i = 0;
+                            while (i < qtde) {
+                                document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
+                                i++;
+                            }
+                            document.querySelector("#botao").style.display = "none";
+                        } else {
+                            alert("Número máximo de participantes atingido (30)");
                         }
-                        document.querySelector("#botao").style.display = "none";
                     } else {
                         alert("Número insuficiente de participantes");
                     }
