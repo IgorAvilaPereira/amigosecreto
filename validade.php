@@ -23,15 +23,15 @@ class Validade
                     $data_atual = date("Y-m-d");
                     $data_atual = explode("-", $data_atual);
                     // 2024, 2025 e etc. >= 2023+1 
-                    if ($data_expira_amigo_secreto[2] >= $data_atual[2] + 1) {
+                    if ($data_atual[2] >= $data_expira_amigo_secreto[2]) {
                         // se for 2024 tenho que verificar o mes
-                        if ($data_expira_amigo_secreto[2] - $data_atual[2] + 1 == 0) {
+                        if ($data_atual[2] - $data_expira_amigo_secreto[2] == 0) {
                             // se for o mesmo ano, tenho que verificar o mes. se o mes for maior => deleta
-                            if ($data_expira_amigo_secreto[1] > $data_atual[1]) {
+                            if ($data_atual[1] > $data_expira_amigo_secreto[1]) {
                                 unlink($entry);
                             }
                             // se for o mesmo mes mas o dia eh maior => deleta
-                            else if ($data_expira_amigo_secreto[1] == $data_atual[1] && $data_expira_amigo_secreto[0] > $data_atual[0]) {
+                            else if ($data_expira_amigo_secreto[1] == $data_atual[1] && $data_atual[0] > $data_expira_amigo_secreto[0]) {
                                 unlink($entry);
                             }
                             // se o dia for igual, ainda resta este dia
