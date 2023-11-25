@@ -98,7 +98,7 @@ require_once "validade.php";
 $validade = new Validade();
 $validade->valida();
 
-if (!isset($_POST['vetParticipante'])) die("Você inserir, primeiramente, os participantes!");
+if (!isset($_POST['vetParticipante'])) die("Você deve inserir, primeiramente, um número válido de participantes!");
 
 $vetParticipante = $_POST['vetParticipante'];
 $geracao = new Geracao();
