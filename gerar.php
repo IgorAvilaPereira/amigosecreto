@@ -79,7 +79,7 @@ class Geracao
                     $i++;
                 }
                 echo "<h3> Todos os participantes devem acessar: <a href='" . URL . "'> ".URL." </a> e VERIFICAR seu amigo (usando a chave do evento e sua chave pessoal) </h3>";
-                echo "<a href='".URL."'> Voltar </a>";
+                echo "<a href='javascript:void(0)' onclick='history.go(-1)'> Voltar </a>";
                 fclose($myfile);
             } else {
                 echo "<h1> - Não foi possível criar o evento de amigo secreto. Possíveis causas: <h1>";

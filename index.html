@@ -12,20 +12,28 @@
                 return;
             }
             if (!isNaN(qtde)) {
-                var i = 0;
-                while (i < qtde) {
-                    document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
-                    i++;
+                if (qtde > 0) {
+                    if (qtde > 1) {
+                        var i = 0;
+                        while (i < qtde) {
+                            document.querySelector("#div_participante").innerHTML += "<b>Nome:</b><input type=\"text\" name=\"vetParticipante[]\"><!--<input type=\"text\" name=\"vetEmail[]\">--><br>";
+                            i++;
+                        }
+                        document.querySelector("#botao").style.display = "none";
+                    } else {
+                        alert("Número insuficiente de participantes");
+                    }
+                } else {
+                    alert("Número insuficiente de participantes");
                 }
-                document.querySelector("#botao").style.display = "none";
             } else {
                 alert("Digite uma quantidade válida, ou seja, um número inteiro!");
             }
 
         }
         function funcao_submit() {
-            // return true;
-            alert("A geração pode demorar devido ao aumento do número de acessos e nossa plataforma! Espere!");
+            return true;
+            // alert("A geração pode demorar devido ao aumento do número de acessos e nossa plataforma! Espere!");
         }
     </script>
 </head>
