@@ -3,7 +3,7 @@
     if (empty($_POST['chave_evento']) || empty($_POST['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
     $chaveEvento = trim($_POST['chave_evento']);
     $chavePessoal = trim($_POST['chave_pessoal']);    
-    $myfile = fopen($chaveEvento.".txt", "r") or die("Chave incorreta!");        
+    $myfile = fopen($chaveEvento.".txt", "r") or die("Chave incorreta ou Amigo Secreto Expirado (cada evento tem validade de 1 ano)!");        
     $chavePessoalOK = false;
     while(!feof($myfile)) {
       $linha = fgets($myfile);

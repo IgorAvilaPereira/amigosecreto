@@ -66,7 +66,7 @@ class Geracao
                 }
                 $i = 0;
                 $chaveEvento = uniqid(true);
-                echo "<h1> Evento Criado com sucesso <h1>";
+                echo "<h1> Evento Criado com sucesso (obs: evento tem validade de 1 ano) <h1>";
                 echo "<h2> Chave do evento:" . $chaveEvento . "<h2>";
                 echo "<h3> Informe aos participantes a chave do evento e suas chaves pessoais:</h3>";
                 $myfile = fopen($chaveEvento . ".txt", "w") or die("Unable to open file!");
