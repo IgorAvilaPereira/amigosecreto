@@ -26,11 +26,11 @@ class Validade
                     // echo var_dump($data_atual);
                     // echo var_dump($data_expira_amigo_secreto); 
                     // echo $data_atual[2].">=".$data_expira_amigo_secreto[2];
-                    if ($data_atual[2] >= $data_expira_amigo_secreto[2]) {
+                    if (((int)$data_atual[2]) >= ((int)$data_expira_amigo_secreto[2])) {
                         // se for 2024 tenho que verificar o mes
-                        if ($data_atual[2] - $data_expira_amigo_secreto[2] == 0) {
+                        if (((int)$data_atual[2]) - ((int)$data_expira_amigo_secreto[2]) == 0) {
                             // se for o mesmo ano, tenho que verificar o mes. se o mes for maior => deleta
-                            if ($data_atual[1] > $data_expira_amigo_secreto[1]) {
+                            if (((int)$data_atual[1]) > ((int)$data_expira_amigo_secreto[1])) {
                                 unlink($entry);
                             }
                             // se for o mesmo mes mas o dia eh maior => deleta
