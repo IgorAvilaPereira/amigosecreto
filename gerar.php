@@ -8,9 +8,11 @@ class Geracao
         // if (!isset($_POST['vetParticipante'])) die("Acesso proibido!");
         $i = 0;
         if (is_array($vetParticipante)) {
+            if (!(count($vetParticipante) > 1)) die("Número insuficiente de participantes");
+
             while ($i < count($vetParticipante)) {
                 if (empty($vetParticipante[$i])) {
-                    die("Não é permitido participante com nome em branco:" . ($i + 1));
+                    die("Não é permitido participante com nome em branco:");
                 }
                 $i++;
             }
@@ -96,6 +98,7 @@ $validade = new Validade();
 $validade->valida();
 
 if (!isset($_POST['vetParticipante'])) die("Acesso proibido!");
+
 $vetParticipante = $_POST['vetParticipante'];
 $geracao = new Geracao();
 $geracao->gera($vetParticipante);
