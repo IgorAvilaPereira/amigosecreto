@@ -12,15 +12,12 @@ class Validade
     public function valida()
     {
 
-
-
         $codigo = ["gerar.php", "index.html", "validade.php", "verificar.php", ".git", "README.md"];
 
         if ($handle = opendir('.')) {
             while (false !== ($entry = readdir($handle))) {
                 if ($entry != "." && $entry != ".." && !in_array($entry, $codigo)) {
-                    echo "$entry <br>";
-
+                    // echo "$entry <br>";
                     $futureDate = date('Y-m-d', strtotime('+1 year', filectime($entry)));
                     $futureDate = explode("-", $futureDate);
                     $data_atual = date("Y-m-d");
