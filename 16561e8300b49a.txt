@@ -1,6 +1,0 @@
-16561e8300b539;igor;nanah
-16561e8300b57c;nanah;sergio
-16561e8300b596;gilda;homero
-16561e8300b59b;sergio;fatima
-16561e8300b5a0;homero;igor
-16561e8300b5a4;fatima;gilda
