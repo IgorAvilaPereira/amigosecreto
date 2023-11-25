@@ -97,7 +97,7 @@ require_once "validade.php";
 $validade = new Validade();
 $validade->valida();
 
-if (!isset($_POST['vetParticipante'])) die("Acesso proibido!");
+if (!isset($_POST['vetParticipante'])) die("Você inserir, primeiramente, os participantes!");
 
 $vetParticipante = $_POST['vetParticipante'];
 $geracao = new Geracao();
