@@ -6,13 +6,28 @@
     if (is_array($vetParticipante)) {
         while ($i < count($vetParticipante)){
             if (empty($vetParticipante[$i])){
-                die("Erro no cadastro do participante:".($i+1));
+                die("Não é permitido participante com nome em branco:".($i+1));
             }
             $i++;
         }       
     } else {
         die("Cadastro incorreto de participantes");
     }
+
+    if (is_array($vetParticipante)) {
+        for ($i = 0; $i < count($vetParticipante); $i++) {             
+            for ($j= $i+1; $j < count($vetParticipante); $j++) { 
+                // if (strcmp(trim(strtoupper($vetParticipante[$i])), trim(strtoupper($vetParticipante[$i])))){
+                if (trim(strtoupper($vetParticipante[$i])) == trim(strtoupper($vetParticipante[$j]))){
+                    die("Não é permitido participantes com nome exatamente iguais");
+                }
+            }
+        }      
+    } else {
+        die("Cadastro incorreto de participantes");
+    }
+
+
     $vetAmigo = $vetParticipante;    
     $vetAmigoPossivel = $vetParticipante;
     // $vetEmail = $_POST['vetEmail'];  
@@ -20,25 +35,27 @@
     $i = 0;
     if (is_array($vetAmigo) && is_array($vetParticipante)){
         if (count($vetParticipante) > 0 /*&& count($vetAmigo) > 0 && count($vetParticipante) == count($vetAmigo)*/){
-            foreach($vetParticipante as $participante){   
+            foreach($vetParticipante as $aux => $participante){   
+                // array_splice($vetAmigoPossivel, $aux, 1);  
                 shuffle($vetAmigoPossivel);  
                 $indicePossivelAmigo = 0;
-                $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
-                while ($participante == $possivelAmigo || in_array($possivelAmigo, $vetAmigo)){            
-                    if ($indicePossivelAmigo < count($vetAmigoPossivel)) {
-                        // shuffle($vetAmigoPossivel);  
+                $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];                              
+                while ($participante == $possivelAmigo || in_array(trim($possivelAmigo), $vetAmigo)){            
+                    if ($indicePossivelAmigo < count($vetAmigoPossivel)) {                        
                         $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
                         $indicePossivelAmigo++;
-                    } else {
-                        // shuffle($vetAmigoPossivel);  
-                        // $indicePossivelAmigo = 0;
-                        // $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
-                        die("Erro na geração do amigo secreto. Favor reiniciar o processo! <a href='".$URL."'> voltar </a>");
+                    } else {                                                  
+                        $indicePossivelAmigo = 0;
+                        if ($aux == 0){
+                            $indicePossivelAmigo++;
+                        }
+                        $possivelAmigo = $vetAmigoPossivel[$indicePossivelAmigo];
+                        // die("Erro na geração do amigo secreto. Favor reiniciar o processo! <a href='".$URL."'> voltar </a>");
                     }
                 }
                 $vetAmigo[$i] = $possivelAmigo;  
-                // array_splice($vetAmigoPossivel, $indicePossivelAmigo, 1);     
-                
+                // array_splice($vetAmigoPossivel, $indicePossivelAmigo, 1);                     
+                // $vetAmigoPossivel[] = $vetParticipante[$i];
                 $i++;
             }
             $i = 0;
