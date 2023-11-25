@@ -24,8 +24,8 @@
 
         }
         function funcao_submit() {
-            return true;
-            // alert("A geração pode demorar devido ao aumento do número de acessos e nossa plataforma! Espere!");
+            // return true;
+            alert("A geração pode demorar devido ao aumento do número de acessos e nossa plataforma! Espere!");
         }
     </script>
 </head>
@@ -50,11 +50,11 @@
     <h2>Crie um novo Evento:</h2>
     <button id="botao" onclick="adicionar_participante()">Adiciona Participantes</button>
     <form action="gerar.php" method="post" onsubmit="return funcao_submit()">
-        <input type="submit" value="Gerar">
+        <!-- <input type="submit" value="Gerar"> -->
 
         <br>
         <div id="div_participante">
-            <b>Nome:</b><input type="text" name="vetParticipante[]" value="igor"> <br>
+            <!-- <b>Nome:</b><input type="text" name="vetParticipante[]" value="igor"> <br>
             <b>Nome:</b><input type="text" name="vetParticipante[]" value="nanah"> <br>
             <b>Nome:</b><input type="text" name="vetParticipante[]" value="sergio">  <br>
             <b>Nome:</b><input type="text" name="vetParticipante[]" value="gilda"> <br>
@@ -65,7 +65,7 @@
             <b>Nome:</b><input type="text" name="vetParticipante[]" value="osmar"> <br>
             <b>Nome:</b><input type="text" name="vetParticipante[]" value="miriam"> <br>
             <b>Nome:</b><input type="text" name="vetParticipante[]" value="edegar"> <br>
-            <b>Nome:</b><input type="text" name="vetParticipante[]" value="geneci"> <br>
+            <b>Nome:</b><input type="text" name="vetParticipante[]" value="geneci"> <br> -->
         </div> <br>
         <br>
         <input type="submit" value="Gerar">
