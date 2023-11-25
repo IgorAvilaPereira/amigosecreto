@@ -1,5 +1,6 @@
 <?php
-define("URL", "https://amigosecretoigor.000webhostapp.com/");
+// define("URL", "https://amigosecretoigor.000webhostapp.com/");
+define("URL", "http://localhost:8081/");
 
 class Geracao
 {
@@ -32,8 +33,6 @@ class Geracao
         } else {
             die("Cadastro incorreto de participantes");
         }
-
-
         $vetAmigo = $vetParticipante;
         $vetAmigoPossivel = $vetParticipante;
         // $vetEmail = $_POST['vetEmail'];  
@@ -66,23 +65,25 @@ class Geracao
                 }
                 $i = 0;
                 $chaveEvento = uniqid(true);
-                echo "<h1> Evento Criado com sucesso (obs: evento tem validade de 1 ano) <h1>";
-                echo "<h2> Chave do evento:" . $chaveEvento . "<h2>";
-                echo "<h3> Informe aos participantes a chave do evento e suas chaves pessoais:</h3>";
+                echo "<h1> Evento Criado com sucesso <h1>";
+                echo "<h3> Obs: evento tem validade de 1 ano </h3>";
+                // echo "<h2> Chave do evento:" . $chaveEvento . "<h2>";
+                echo "<h3> Compartilhe com os participantes os seguintes endereços, para que cada participante descubra seu amigo secreto:</h3>";
                 $myfile = fopen($chaveEvento . ".txt", "w") or die("Unable to open file!");
                 while ($i < count($vetParticipante)) {
                     $chave = uniqid(true);
-                    echo  $vetParticipante[$i] . " => <b>Chave Evento:</b>" . $chaveEvento . " <b>Chave Pessoal:</b>" . $chave . "<br><br>";
+                    // echo  $vetParticipante[$i] . " => <b>Chave Evento:</b>" . $chaveEvento . " <b>Chave Pessoal:</b>" . $chave . "<br><br>";
+                    echo  "<b>".$vetParticipante[$i] . "</b>: Para descobrir seu amigo secreto acesse: <a href='".URL."verificar.php?chave_evento=".$chaveEvento."&chave_pessoal=".$chave."'>".URL."verificar.php?chave_evento=".$chaveEvento."&chave_pessoal=".$chave."</a> <br> <br>";
                     // participanteX tirou amigoY
                     $linha = $chave . ";" . $vetParticipante[$i] . ";" . $vetAmigo[$i] . "\n";
                     fwrite($myfile, $linha);
                     $i++;
                 }
-                echo "<h3> Todos os participantes devem acessar: <a href='" . URL . "'> ".URL." </a> e VERIFICAR seu amigo (usando a chave do evento e sua chave pessoal) </h3>";
+                // echo "<h3> Todos os participantes devem acessar: <a href='" . URL . "'> ".URL." </a> e VERIFICAR seu amigo (usando a chave do evento e sua chave pessoal) </h3>";
                 echo "<a href='javascript:void(0)' onclick='history.go(-1)'> Voltar </a>";
                 fclose($myfile);
             } else {
-                echo "<h1> - Não foi possível criar o evento de amigo secreto. Possíveis causas: <h1>";
+                echo "<h1> Não foi possível criar o evento de amigo secreto. Possíveis causas: <h1>";
                 echo "<h2> Nomes e Emails dos participantes são campos obrigatórios </h2>";
             }
         } else {

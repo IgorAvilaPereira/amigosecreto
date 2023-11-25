@@ -1,9 +1,9 @@
 <?php
-    if (!isset($_POST['chave_evento']) || !isset($_POST['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
-    if (empty($_POST['chave_evento']) || empty($_POST['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
+    if (!isset($_GET['chave_evento']) || !isset($_GET['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
+    if (empty($_GET['chave_evento']) || empty($_GET['chave_pessoal'])) die("Chaves (do Evento e Pessoal) são obrigatórias para a verificação!");
   
-    $chaveEvento = trim($_POST['chave_evento']);
-    $chavePessoal = trim($_POST['chave_pessoal']); 
+    $chaveEvento = trim($_GET['chave_evento']);
+    $chavePessoal = trim($_GET['chave_pessoal']); 
 
     if (file_exists($chaveEvento.".txt")) {
       $myfile = fopen($chaveEvento.".txt", "r") or die("Chave incorreta ou Amigo Secreto Expirado (cada evento tem validade de 1 ano)!");        
@@ -21,6 +21,6 @@
       }
       fclose($myfile);
     } else {
-      die("Chave incorreta ou Amigo Secreto Expirado (cada evento tem validade de 1 ano)!");
+      die("Chave incorreta ou Evento Expirado (cada evento tem validade de 1 ano)!");
     }
 ?>
