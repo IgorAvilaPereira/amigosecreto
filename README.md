@@ -1,6 +1,6 @@
 # amigosecreto
 
-Projeto desenvolvido por Igor Ávila Pereira que automatiza o sorteio de nomes para o tradicional jogo de amigo secreto.
+Projeto que automatiza o sorteio de nomes para o tradicional jogo de amigo secreto.
 A aplicação foi desenvolvida em PHP com uma interface HTML simples, permitindo o uso direto pelo navegador.
 
 ## Demo
